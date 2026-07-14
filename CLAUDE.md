@@ -50,4 +50,8 @@ Code, data structure, and instruction text are MIT — but all media in `images/
 
 ## Git workflow (must follow)
 
-Never commit to or push `main` directly. For every change: create a feature branch, commit there, push the branch, and merge it into `main` (preferably via PR so the validate workflow gates the merge).
+Never commit to or push `main` directly. For every change: create a feature branch, commit there, push the branch, and merge it into `main` (preferably via PR so the validate workflow gates the merge). This is enforced by a GitHub ruleset on `main` (PRs required, `validate` status check must pass, no force pushes or deletions) — direct pushes to `main` are rejected server-side.
+
+## Deployment
+
+Merges to `main` auto-deploy via GitHub Pages: `index.html` is served at https://rarhs.github.io/exercises-dataset/. A broken `index.html` on `main` breaks a live public page, not just a local file.
